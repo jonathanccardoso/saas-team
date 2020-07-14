@@ -40,7 +40,7 @@ adonis make:model Invite -m -c
 configurações relacionadas ao banco pode fazer diretamente nas migrações.
 e o acesso ao banco se da no .env
 
-* com o postgres, precisa adicionar, mencionado em config/database.js
+- com o postgres, precisa adicionar, mencionado em config/database.js
 
 npm i --save pg
 
@@ -48,15 +48,18 @@ rodando as migrações
 
 adonis migration:run
 
-** lembre-se que a ordem das migrações é a ordem de criação das tabelas no banco
+\*\* lembre-se que a ordem das migrações é a ordem de criação das tabelas no banco
 
-## criar seed 
+## criar seed
 
 para alimentar o banco sem precisar sempre inserir, com o comando
 
 adonis make:seed
 
-### adonis tem plugin 
+### adonis tem plugin
 
 são proveiders e precisam de configuração.
 
+criar controle 
+
+adonis make:controller Session
