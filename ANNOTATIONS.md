@@ -74,4 +74,12 @@ para adicionar associação do hook com o model, precisa colocar metodo boot com
 
 * para envio de email, para rodar em background, precisa usar o adonis-kue (disparo de job), um o job (com make:job) e @adonisjs/redis
 
+* para a autorização no projeto
+usamos o package "https://github.com/enniel/adonis-acl"
+e configuramos no userTeam.
+e com o acl:setup vai configurar finalizar as migrations
 
+**rodar migrations novamente
+❯ adonis migration:refresh
+rodar seed
+❯ adonis seed
