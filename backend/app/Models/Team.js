@@ -12,7 +12,7 @@ class Team extends Model {
         slug: "name",
       },
       strategy: "dbIncrement",
-      disableUpdates: false
+      disableUpdates: false,
     });
   }
 
@@ -20,6 +20,10 @@ class Team extends Model {
     return this.belongsToMany("App/Models/User").pivotModel(
       "App/Models/UserTeam"
     );
+  }
+
+  projects() {
+    return this.hasMany("App/Models/Project");
   }
 }
 
