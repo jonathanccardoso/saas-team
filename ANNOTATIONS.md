@@ -63,3 +63,15 @@ são proveiders e precisam de configuração.
 criar controle 
 
 adonis make:controller Session
+
+### envio de email
+
+para escultar alteações nos models e enviar um email, precisamos de um hook.
+
+adonis make:hook Invite
+
+para adicionar associação do hook com o model, precisa colocar metodo boot com addHook() no model respectivo.
+
+* para envio de email, para rodar em background, precisa usar o adonis-kue (disparo de job), um o job (com make:job) e @adonisjs/redis
+
+
