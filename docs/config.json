@@ -1,0 +1,8 @@
+{
+  "title" : "API Team",
+  "version" : "v1",
+  "host" : "localhost",
+  "basePath" : "/",
+  "schemes" : "http",
+  "description" : "API to manage teams and use in the frontend"
+}

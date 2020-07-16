@@ -1,0 +1,174 @@
+swagger: "2.0"
+info:
+  description: "API to manage teams and use in the frontend"
+  version: "v1"
+  title: "API Team"
+host: "localhost"
+basePath: "/"
+tags:
+
+- name: "Users"
+  description: ""
+
+- name: "Teams"
+  description: ""
+
+- name: "Role"
+  description: ""
+
+- name: "Invites"
+  description: ""
+
+- name: "Projects"
+  description: ""
+
+- name: "Members"
+  description: ""
+
+- name: "Permissions"
+  description: ""
+
+- name: "Sessions"
+  description: ""
+
+schemes:
+ - "http"
+ - "https"
+paths:
+  /teams/1:
+    get:
+      tags:
+      - "Teams"
+      summary: "Show"
+      responses:
+        200:
+          description: "successful operation"
+  /teams:
+    post:
+      tags:
+      - "Teams"
+      summary: "Create"
+      consumes:
+        - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+  /teams/6:
+    put:
+      tags:
+      - "Teams"
+      summary: "Update"
+      consumes:
+        - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+  /teams/4:
+    delete:
+      tags:
+      - "Teams"
+      summary: "Delete"
+      responses:
+        200:
+          description: "successful operation"
+  /projects:
+    post:
+      tags:
+      - "Projects"
+      summary: "Create"
+      consumes:
+        - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        type: "string"
+        description: ""
+        required: true
+      - name: "TEAM"
+        in: "header"
+        type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+  /projects/1:
+    get:
+      tags:
+      - "Projects"
+      summary: "Show"
+      parameters:
+      - name: "TEAM"
+        in: "header"
+        type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+    put:
+      tags:
+      - "Projects"
+      summary: "Update"
+      consumes:
+        - "application/json"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        type: "string"
+        description: ""
+        required: true
+      - name: "TEAM"
+        in: "header"
+        type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+    delete:
+      tags:
+      - "Projects"
+      summary: "Delete"
+      parameters:
+      - name: "TEAM"
+        in: "header"
+        type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+  /members/2:
+    put:
+      tags:
+      - "Members"
+      summary: "Update"
+      consumes:
+        - "application/json"
+      parameters:
+      - name: "TEAM"
+        in: "header"
+        type: "string"
+        description: ""
+        required: true
+      - name: "Content-Type"
+        in: "header"
+        type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"

@@ -1,85 +1,108 @@
-# Aplicação SASS
+# Aplicação SaaS
 
 - Um usuário pode fazer parte da mesma empresa.
 - Varias empresas no mesmo ambiente, mas com dados e contas diferentes. Ex: discord, digitalocean, dentre outros.
+- **SaaS** é a sigla para Software as a Service — ou Software como Serviço, em português. Nesse modelo, o sistema não é comercializado como um produto, mas sim como serviço, como o próprio nome sugere. Assim, não é feita a instalação de nenhum programa nos equipamentos e as aplicações são usadas pela internet.
 
 ## Server
 
-- singotenan
+![Which To Choose](https://blog.rocketseat.com.br/content/images/2019/03/SaaS_Single_tenant_ou_Multi-tenant_qual_escolher.png)
+
+- Single tenant
+
   Cópia da aplicação e do banco de dados para cada cliente
-- mulitenan
+
+- Multi-tenant
+
   Cópia da aplicação e do banco de dados, mas com vários clientes usando a mesma aplicação.
 
-### Adonis
+## Adonis
 
-- (?) porque usa essa ferramenta.
+- Porque usar?
+
+  É um framework mais robusto com uma série de funcionalidades prontas, extremamente baseado em frameworks famosos de outras linguagens como o Laravel, Rails ou Django.
+
+  O Adonis assim que instalado já vem com uma estrutura pronta e o desenvolvedor é limitado a utilizar essa organização para seus arquivos, além de já possuir uma série de funcionalidades pré-implementadas como autenticação, ORM, validação, envio de e-mail, logging, etc...
 
 ```console
-adonis new backend --api-only
-adonis serve --dev
+❯ adonis new backend --api-only
+❯ adonis serve --dev
 ```
 
 ```console
-adonis make:model Project -m -c // roda a migration e o controle do model
+❯ adonis make:model Project -m -c // roda a migration e o controle do model
 
-adonis make:model Team -m -c
+❯ adonis make:model Team -m -c
 
-adonis make:model UserTeam -m // n*n, foi criado para caso quiser alterar dados da tabela pivot
+❯ adonis make:model UserTeam -m // n*n, foi criado para caso quiser alterar dados da tabela pivot
 
-adonis make:model Invite -m -c
+❯ adonis make:model Invite -m -c
 ```
 
+- Configurando o eslint
+
 ```console
-* configurar o eslint do projeto
 ❯ yarn add eslint --dev
 ❯ npx eslint --init //use style with standard
 ```
 
-## db
+## Banco de Dados
 
-configurações relacionadas ao banco pode fazer diretamente nas migrações.
-e o acesso ao banco se da no .env
+- Configurações realizadas diretamente nas migrações. E o acesso ao banco se da no .env
 
-- com o postgres, precisa adicionar, mencionado em config/database.js
+- Com o postgres, precisa adicionar, mencionado em config/database.js
 
+```console
 npm i --save pg
+```
 
-rodando as migrações
+- Rodando as migrações
 
-adonis migration:run
+```console
+❯ adonis migration:run
+```
 
-\*\* lembre-se que a ordem das migrações é a ordem de criação das tabelas no banco
+Lembre-se que a ordem das migrações é a ordem de criação das tabelas no banco de dados.
 
-## criar seed
+### SEED
 
-para alimentar o banco sem precisar sempre inserir, com o comando
+Para alimentar o banco sem precisar sempre inserir tudo manualmente, usa-se o comando
 
-adonis make:seed
+```console
+❯ adonis make:seed
+```
 
-### adonis tem plugin
+## Plugins no Adonis
 
-são proveiders e precisam de configuração.
+São providers e precisam de configuração, instalados com:
 
-criar controle 
+```console
+❯ adonis install @adonisjs/validator
+```
 
-adonis make:controller Session
+Criar controle
 
-### envio de email
+```console
+❯ adonis make:controller Session
+```
 
-para escultar alteações nos models e enviar um email, precisamos de um hook.
+## Envio de Email
 
-adonis make:hook Invite
+Para ouvir alteações nos models e enviar um email, precisamos de um **hook**.
 
-para adicionar associação do hook com o model, precisa colocar metodo boot com addHook() no model respectivo.
+```console
+❯ adonis make:hook Invite
+```
 
-* para envio de email, para rodar em background, precisa usar o adonis-kue (disparo de job), um o job (com make:job) e @adonisjs/redis
+Para adicionar associação do hook com o model, precisa colocar metodo boot com **addHook()** no respectivo model.
 
-* para a autorização no projeto
-usamos o package "https://github.com/enniel/adonis-acl"
-e configuramos no userTeam.
-e com o acl:setup vai configurar finalizar as migrations
+- O envio de email, para rodar em background, precisa usar o **adonis-kue** (disparo de job), um o job (com make:job) e @adonisjs/redis.
 
-**rodar migrations novamente
+- Para a autorização no projeto usamos o package https://github.com/enniel/adonis-acl, e configuramos no userTeam. Com o acl:setup vai configurar finalizar as migrations.
+
+- Rodar migrations e seed novamente.
+
+```console
 ❯ adonis migration:refresh
-rodar seed
 ❯ adonis seed
+```
