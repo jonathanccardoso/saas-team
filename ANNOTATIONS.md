@@ -16,7 +16,7 @@
 
   Cópia da aplicação e do banco de dados, mas com vários clientes usando a mesma aplicação.
 
-## Adonis
+### Adonis
 
 - Porque usar?
 
@@ -46,7 +46,7 @@
 ❯ npx eslint --init //use style with standard
 ```
 
-## Banco de Dados
+### Banco de Dados
 
 - Configurações realizadas diretamente nas migrações. E o acesso ao banco se da no .env
 
@@ -64,7 +64,7 @@ npm i --save pg
 
 Lembre-se que a ordem das migrações é a ordem de criação das tabelas no banco de dados.
 
-### SEED
+#### SEED
 
 Para alimentar o banco sem precisar sempre inserir tudo manualmente, usa-se o comando
 
@@ -72,7 +72,7 @@ Para alimentar o banco sem precisar sempre inserir tudo manualmente, usa-se o co
 ❯ adonis make:seed
 ```
 
-## Plugins no Adonis
+### Plugins no Adonis
 
 São providers e precisam de configuração, instalados com:
 
@@ -86,7 +86,7 @@ Criar controle
 ❯ adonis make:controller Session
 ```
 
-## Envio de Email
+### Envio de Email
 
 Para ouvir alteações nos models e enviar um email, precisamos de um **hook**.
 
@@ -106,3 +106,15 @@ Para adicionar associação do hook com o model, precisa colocar metodo boot com
 ❯ adonis migration:refresh
 ❯ adonis seed
 ```
+
+## Web
+
+Use essa documentaçao para eslint e prettier
+https://www.youtube.com/watch?v=TI4v4Y8yRjw
+
+vscode.config
+
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true
+
+
