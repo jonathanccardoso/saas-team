@@ -132,3 +132,5 @@ yarn add redux react-redux redux-saga axios
 
 no app.js
 utilizamos o fragment porque o provider só aceita um filho
+
+\*\* o saga ouve as actions do duck e faz o disparo das funcões.
