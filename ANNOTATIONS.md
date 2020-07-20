@@ -129,3 +129,6 @@ instalações:
 ```console
 yarn add redux react-redux redux-saga axios
 ```
+
+no app.js
+utilizamos o fragment porque o provider só aceita um filho
