@@ -114,7 +114,18 @@ https://www.youtube.com/watch?v=TI4v4Y8yRjw
 
 vscode.config
 
-  "editor.formatOnSave": true,
-  "prettier.eslintIntegration": true
+"editor.formatOnSave": true,
+"prettier.eslintIntegration": true
 
+### gerenciamento de estados
 
+utilizando:
+
+- redux
+- redux saga
+
+instalações:
+
+```console
+yarn add redux react-redux redux-saga axios
+```
