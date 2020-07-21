@@ -19,7 +19,7 @@ export const INITIAL_STATE = Immutable({
 // Reducers
 
 export const sucess = (state, { token }) => {
-  console.log("token", token);
+  // console.log("token", token);
   return state.merge({ signedIn: true, token });
 };
 

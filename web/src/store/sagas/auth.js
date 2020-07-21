@@ -1,5 +1,6 @@
 import { call, put } from "redux-saga/effects";
-import { actions as toastrActions } from "redux-redux-toastr";
+import { push } from "connected-react-router";
+import { actions as toastrActions } from "react-redux-toastr";
 import api from "~/services/api";
 
 import AuthActions from "../ducks/auth";
@@ -12,6 +13,7 @@ export function* signIn({ email, password }) {
 
     // disparo a action sucess
     yield put(AuthActions.signInSucess(response.data.token));
+    yield put(push("/"));
   } catch (err) {
     yield put(
       toastrActions.add({
