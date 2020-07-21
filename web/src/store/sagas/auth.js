@@ -1,4 +1,5 @@
 import { call, put } from "redux-saga/effects";
+import { actions as toastrActions } from "redux-redux-toastr";
 import api from "~/services/api";
 
 import AuthActions from "../ducks/auth";
@@ -12,6 +13,12 @@ export function* signIn({ email, password }) {
     // disparo a action sucess
     yield put(AuthActions.signInSucess(response.data.token));
   } catch (err) {
-    console.log(err);
+    yield put(
+      toastrActions.add({
+        type: "error",
+        title: "Falha no login",
+        message: "Verifique seu e-mail/senha!",
+      })
+    );
   }
 }
