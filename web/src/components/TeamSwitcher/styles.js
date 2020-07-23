@@ -48,3 +48,19 @@ export const NewTeam = styled.button`
     color: rgba(255, 255, 255, 0.6);
   }
 `;
+
+export const Logout = styled.button`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px dashed #e04848;
+  color: #e04848;
+  background: transparent;
+  font-weight: bold;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: #e04848;
+    color: #e04848;
+  }
+`;

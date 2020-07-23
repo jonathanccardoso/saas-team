@@ -4,7 +4,8 @@ import Immutable from "seamless-immutable";
 // action redux
 const { Types, Creators } = createActions({
   signInRequest: ["email", "password"],
-  signInSucess: null,
+  signInSucess: ["token"],
+  signOut: null,
 });
 
 export const AuthTypes = Types;
@@ -23,8 +24,11 @@ export const sucess = (state, { token }) => {
   return state.merge({ signedIn: true, token });
 };
 
+export const logout = (state) => state.merge({ signedIn: false, token: null });
+
 // Reduces to types
 
 export const reducer = createReducer(INITIAL_STATE, {
   [Types.SIGN_IN_SUCESS]: sucess,
+  [Types.SIGN_OUT]: logout,
 });
