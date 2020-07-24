@@ -4,6 +4,17 @@
 - Varias empresas no mesmo ambiente, mas com dados e contas diferentes. Ex: discord, digitalocean, dentre outros.
 - **SaaS** é a sigla para Software as a Service — ou Software como Serviço, em português. Nesse modelo, o sistema não é comercializado como um produto, mas sim como serviço, como o próprio nome sugere. Assim, não é feita a instalação de nenhum programa nos equipamentos e as aplicações são usadas pela internet.
 
+comandos do projeto
+
+```console
+/backend
+yarn start
+adonis kue:listen
+
+/front
+yarn start
+```
+
 ## Server
 
 ![Which To Choose](https://blog.rocketseat.com.br/content/images/2019/03/SaaS_Single_tenant_ou_Multi-tenant_qual_escolher.png)
