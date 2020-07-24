@@ -32,7 +32,7 @@ export const getSuccess = (state, { data }) => state.merge({ data });
 export const updateMember = (state, { id, roles }) =>
   state.merge({
     data: state.data.map((member) =>
-      member.id === id ? { ...members, roles } : {}
+      member.id === id ? { ...member, roles } : {}
     ),
   });
 
