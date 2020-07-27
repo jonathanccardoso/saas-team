@@ -41,7 +41,7 @@ class SignIn extends Component {
         <SignForm onSubmit={this.handleSubmit}>
           <h1>Boas Vindas</h1>
 
-          <span>E-mail</span>
+          <span>E-MAIL</span>
           <input
             type="email"
             name="email"
@@ -49,7 +49,7 @@ class SignIn extends Component {
             onChange={this.handleInputChange}
           />
 
-          <span>Senha</span>
+          <span>SENHA</span>
           <input
             type="password"
             name="password"

@@ -17,6 +17,11 @@ Application full stack project is a compilation of great frameworks for developi
 
 This project was produced to manage a team that has projects, where users can join and invite other users.
 
+### User Test
+
+    email: XX
+    senha: XX
+
 ## Links
 
 - [API Docs - Endpoints](/docs/swagger.yaml)
